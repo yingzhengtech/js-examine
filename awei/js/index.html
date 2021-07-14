@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+        <div class="content">
+            <div class="banner">
+                <div id="banner1">
+                    
+                </div>
+                <div id="banner2">
+                    
+                </div>
+                <div id="banner3">
+                    
+                </div>
+            </div>
+            <button id="btn"><a href="#">按钮</a></button>
+        </div>
+	</body>
+    <script src="js/http.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/get.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    let btn = getId('btn');
+            btn.onclick = function(){
+              ajax({
+                  method:"get",
+                  url:'https://damaospace-fd3922.service.tcloudbase.com/test/banner',
+                  success:function(res){
+                      console.log(res)
+                  }
+              })
+        }
+        
+    </script>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            width: 100%;
+            height: 100%;
+        }
+        #content a{
+            text-decoration: none;
+            color: #000;
+        }
+        .banner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #banner1{
+            width: 400px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+        #banner2{
+            width: 400px;
+            height: 200px;
+            background-color: aqua;
+        }
+        #banner3{
+            width: 400px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        #btn{
+            margin: 0 auto;
+        }
+    </style>
+</html>
